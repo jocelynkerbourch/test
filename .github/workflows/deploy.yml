@@ -10,4 +10,5 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: sync-data
-        run: echo "${{ github.event.head_commit.label }}"
+        if: contains('[no-sync-data]', github.event.head_commit.message) == false
+        run: echo "no sync"
