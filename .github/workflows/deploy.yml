@@ -10,5 +10,5 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: sync-data
-      if: contains(github.event.pull_request.labels.*.name, 'no-sync-data') == false
-      run: echo "sync data"
+        if: contains(github.event.pull_request.labels.*.name, 'no-sync-data') == false
+        run: echo "sync data"
